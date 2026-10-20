@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuizMania</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <section id="screen-start" class="screen active">
+    <div class="start-card">
+      <h1 class="brand">QuizMania</h1>
+
+      <div class="logo" id="logo">
+        <img src="img/logo.png" alt="Quiz Conhecimentos Gerais para crianças de 5 a 6 anos"
+             onerror="document.getElementById('logo').classList.add('fallback')">
+        <div class="logo-fb" aria-hidden="true">
+          <span class="fb-quiz">QUIZ</span>
+          <span class="fb-sub">CONHECIMENTOS GERAIS</span>
+          <span class="fb-tag">PARA CRIANÇAS DE 5 A 6 ANOS</span>
+        </div>
+      </div>
+
+      <form id="start-form" class="start-form" novalidate>
+        <label for="f-nome">Qual é o seu nome?</label>
+        <input id="f-nome" type="text" placeholder="Digite seu nome" autocomplete="off">
+
+        <label for="f-escola">Qual é sua escola?</label>
+        <input id="f-escola" type="text" placeholder="Digite sua escola" autocomplete="off">
+
+        <label for="f-idade">Quantos anos você tem?</label>
+        <input id="f-idade" type="number" inputmode="numeric" min="3" max="99" placeholder="Digite sua idade">
+
+        <button type="submit" class="btn-start">Começar</button>
+      </form>
+    </div>
+  </section>
+
+  
+  <section id="screen-levels" class="screen">
+    <header class="topbar navy"><span>Escolha o nível</span></header>
+    <main class="levels-wrap">
+      <h2 class="levels-title">Escolha o nível</h2>
+      <p class="levels-sub">Comece pelo fácil e vá subindo a montanha!</p>
+      <div id="levels-list" class="levels-list"></div>
+    </main>
+  </section>
+
+  
+  <section id="screen-question" class="screen">
+    <header class="topbar">
+      <span id="q-title">Nível fácil - 1 de 3</span>
+      <button id="btn-next" class="next-btn" type="button" aria-label="Próxima pergunta">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </button>
+    </header>
+    <main class="question-wrap">
+      <div id="progress" class="progress" aria-hidden="true"></div>
+      <div id="q-visual" class="q-visual"></div>
+      <h2 id="q-text" class="q-text"></h2>
+      <div id="q-options" class="options"></div>
+      <div id="q-feedback" class="feedback" role="status" aria-live="polite"></div>
+    </main>
+  </section>
+
+ 
+  <section id="screen-result" class="screen">
+    <header class="topbar"><span>Resultado</span></header>
+    <main class="result-wrap">
+      <div id="stars" class="stars" aria-hidden="true"></div>
+      <p id="r-title" class="r-title">Muito Bem!</p>
+      <p id="r-msg" class="r-msg"></p>
+      <div class="score-card">
+        <div id="r-score" class="score">3 / 3</div>
+        <div class="score-label">ACERTOS</div>
+      </div>
+      <div id="r-info" class="r-info"></div>
+      <div class="r-actions">
+        <button id="btn-next-level" class="btn-r primary" type="button">Próximo nível</button>
+        <button id="btn-again" class="btn-r" type="button">Jogar de novo</button>
+        <button id="btn-home" class="btn-r" type="button">Voltar ao início</button>
+      </div>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
